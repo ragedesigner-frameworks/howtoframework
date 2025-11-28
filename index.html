@@ -7,12 +7,12 @@
     <meta name="description" content="Transform recurring challenges into reusable solutions. Strategic Thinking Academy teaches framework generation methodology. Beta cohort starts December 1, 2025. $750.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --charcoal-blue: #1A2332;
             --logo-blue: #325d74;
-            --copper: #B7704F;
+            --orange: #E67E50;
             --white: #ffffff;
             --light-gray: #f5f5f5;
             --text-dark: #2d2d2d;
@@ -25,7 +25,7 @@
             background-size: cover;
             background-position: center;
             color: var(--white); 
-            padding: 140px 24px 120px; 
+            padding: 160px 24px 140px; 
             text-align: center; 
             min-height: 90vh; 
             display: flex; 
@@ -33,68 +33,68 @@
             justify-content: center; 
         }
         .hero-content { max-width: 900px; margin: 0 auto; }
-        .hero-badge { display: inline-block; background: var(--copper); color: var(--white); padding: 8px 20px; border-radius: 50px; font-size: 14px; font-weight: 600; margin-bottom: 32px; text-transform: uppercase; letter-spacing: 1px; }
-        .hero h1 { font-size: clamp(36px, 6vw, 56px); font-weight: 700; line-height: 1.2; margin-bottom: 24px; }
-        .hero-subtitle { font-size: clamp(18px, 3vw, 22px); color: #ffffff; max-width: 700px; margin: 0 auto 40px; line-height: 1.7; }
-        .hero-meta { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-bottom: 40px; font-size: 16px; }
-        .btn-primary { display: inline-block; background: var(--copper); color: var(--white); padding: 18px 48px; font-size: 18px; font-weight: 600; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; border: 2px solid var(--copper); }
-        .btn-primary:hover { background: transparent; color: var(--copper); }
-        .btn-secondary { display: inline-block; background: transparent; color: var(--white); padding: 18px 48px; font-size: 18px; font-weight: 600; text-decoration: none; border-radius: 8px; border: 2px solid var(--white); transition: all 0.3s ease; margin-left: 16px; }
-        .btn-secondary:hover { background: var(--white); color: var(--charcoal-blue); }
-        section { padding: 96px 24px; }
+        .hero-badge { display: inline-block; background: var(--orange); color: var(--white); padding: 10px 24px; border-radius: 50px; font-size: 13px; font-weight: 700; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 1.5px; }
+        .hero h1 { font-size: clamp(42px, 7vw, 64px); font-weight: 700; line-height: 1.15; margin-bottom: 32px; }
+        .hero-subtitle { font-size: clamp(19px, 3vw, 24px); color: rgba(255,255,255,0.95); max-width: 720px; margin: 0 auto 48px; line-height: 1.65; font-weight: 400; }
+        .hero-meta { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-bottom: 48px; font-size: 17px; font-weight: 500; }
+        .btn-primary { display: inline-block; background: var(--orange); color: var(--white); padding: 20px 52px; font-size: 19px; font-weight: 600; text-decoration: none; border-radius: 12px; transition: all 0.3s ease; border: 2px solid var(--orange); box-shadow: 0 4px 16px rgba(230, 126, 80, 0.3); }
+        .btn-primary:hover { background: transparent; color: var(--orange); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(230, 126, 80, 0.4); }
+        .btn-secondary { display: inline-block; background: transparent; color: var(--white); padding: 20px 52px; font-size: 19px; font-weight: 600; text-decoration: none; border-radius: 12px; border: 2px solid rgba(255,255,255,0.4); transition: all 0.3s ease; margin-left: 20px; }
+        .btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: var(--white); }
+        section { padding: 120px 24px; }
         .container { max-width: 800px; margin: 0 auto; }
         .container-wide { max-width: 1100px; margin: 0 auto; }
-        .section-label { color: var(--copper); font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; }
-        h2 { font-size: clamp(28px, 4vw, 36px); color: var(--charcoal-blue); margin-bottom: 24px; line-height: 1.3; }
+        .section-label { color: var(--orange); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 20px; }
+        h2 { font-size: clamp(32px, 5vw, 44px); color: var(--charcoal-blue); margin-bottom: 28px; line-height: 1.25; font-weight: 700; }
         .problem, .curriculum, .validation, .pricing { background: var(--white); }
         .solution, .testimonial, .faq { background: var(--light-gray); }
         .differentiator, .final-cta { background: var(--charcoal-blue); color: var(--white); }
         .differentiator h2, .final-cta h2 { color: var(--white); }
-        p { font-size: 18px; line-height: 1.8; margin-bottom: 20px; color: var(--text-medium); }
-        .week-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; margin-top: 48px; }
-        .week-card { background: var(--white); border: 2px solid var(--light-gray); border-radius: 12px; padding: 32px; transition: all 0.3s ease; }
-        .week-card:hover { border-color: var(--copper); transform: translateY(-4px); }
-        .week-number { display: inline-block; background: var(--charcoal-blue); color: var(--white); padding: 6px 16px; border-radius: 50px; font-size: 13px; font-weight: 600; margin-bottom: 16px; }
-        .week-card h3 { color: var(--charcoal-blue); font-size: 20px; margin-bottom: 12px; }
-        .week-card p { font-size: 15px; line-height: 1.7; }
-        .diff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 48px; margin-top: 48px; }
-        .diff-item h3 { color: var(--copper); font-size: 20px; margin-bottom: 12px; }
-        .diff-item p { opacity: 0.9; line-height: 1.7; color: var(--white); }
-        .proof-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px; margin-top: 48px; }
-        .proof-item { text-align: center; padding: 32px; }
-        .proof-number { font-size: 48px; font-weight: 700; color: var(--copper); margin-bottom: 8px; }
-        .proof-label { font-size: 16px; color: var(--text-medium); }
-        .quote-box { background: var(--white); border-left: 4px solid var(--copper); padding: 40px; margin-top: 32px; border-radius: 0 12px 12px 0; }
-        .quote-text { font-size: 22px; font-style: italic; color: var(--charcoal-blue); line-height: 1.7; margin-bottom: 24px; }
-        .quote-author { font-weight: 600; color: var(--text-dark); }
-        .quote-role { color: var(--text-medium); font-size: 14px; }
-        .price-card { background: var(--white); border: 3px solid var(--copper); border-radius: 16px; padding: 48px; max-width: 500px; margin: 48px auto 0; text-align: center; }
-        .price-badge { display: inline-block; background: var(--copper); color: var(--white); padding: 6px 20px; border-radius: 50px; font-size: 13px; font-weight: 600; margin-bottom: 24px; }
-        .price-amount { font-size: 64px; font-weight: 700; color: var(--charcoal-blue); }
-        .price-original { font-size: 24px; color: var(--text-medium); text-decoration: line-through; margin-left: 16px; }
-        .price-details { margin: 32px 0; text-align: left; list-style: none; }
-        .price-details li { padding: 12px 0; border-bottom: 1px solid var(--light-gray); display: flex; align-items: center; gap: 12px; }
+        p { font-size: 19px; line-height: 1.75; margin-bottom: 24px; color: var(--text-medium); }
+        .week-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; margin-top: 56px; }
+        .week-card { background: var(--white); border: 2px solid var(--light-gray); border-radius: 16px; padding: 40px; transition: all 0.3s ease; }
+        .week-card:hover { border-color: var(--orange); transform: translateY(-6px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+        .week-number { display: inline-block; background: var(--charcoal-blue); color: var(--white); padding: 8px 20px; border-radius: 50px; font-size: 12px; font-weight: 700; margin-bottom: 20px; letter-spacing: 1px; }
+        .week-card h3 { color: var(--charcoal-blue); font-size: 22px; margin-bottom: 16px; font-weight: 700; }
+        .week-card p { font-size: 16px; line-height: 1.7; color: var(--text-medium); }
+        .diff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 56px; margin-top: 56px; }
+        .diff-item h3 { color: var(--orange); font-size: 22px; margin-bottom: 16px; font-weight: 700; }
+        .diff-item p { opacity: 0.9; line-height: 1.75; color: rgba(255,255,255,0.9); font-size: 17px; }
+        .proof-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 56px; }
+        .proof-item { text-align: center; padding: 40px; }
+        .proof-number { font-size: 56px; font-weight: 700; color: var(--orange); margin-bottom: 12px; }
+        .proof-label { font-size: 17px; color: var(--text-medium); }
+        .quote-box { background: var(--white); border-left: 6px solid var(--orange); padding: 48px; margin-top: 40px; border-radius: 0 16px 16px 0; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+        .quote-text { font-size: 24px; font-style: italic; color: var(--charcoal-blue); line-height: 1.65; margin-bottom: 28px; font-weight: 500; }
+        .quote-author { font-weight: 700; color: var(--text-dark); font-size: 18px; }
+        .quote-role { color: var(--text-medium); font-size: 15px; margin-top: 4px; }
+        .price-card { background: var(--white); border: 3px solid var(--orange); border-radius: 20px; padding: 56px; max-width: 520px; margin: 56px auto 0; text-align: center; box-shadow: 0 8px 32px rgba(230, 126, 80, 0.15); }
+        .price-badge { display: inline-block; background: var(--orange); color: var(--white); padding: 8px 24px; border-radius: 50px; font-size: 13px; font-weight: 700; margin-bottom: 28px; letter-spacing: 1px; }
+        .price-amount { font-size: 72px; font-weight: 700; color: var(--charcoal-blue); }
+        .price-original { font-size: 28px; color: var(--text-medium); text-decoration: line-through; margin-left: 16px; }
+        .price-details { margin: 40px 0; text-align: left; list-style: none; }
+        .price-details li { padding: 16px 0; border-bottom: 1px solid var(--light-gray); display: flex; align-items: center; gap: 16px; font-size: 17px; }
         .price-details li:last-child { border-bottom: none; }
-        .checkmark { color: var(--copper); font-weight: bold; }
-        .faq-item { background: var(--white); border-left: 4px solid var(--copper); padding: 32px; margin-bottom: 24px; border-radius: 0 8px 8px 0; }
-        .faq-question { font-size: 18px; font-weight: 600; color: var(--charcoal-blue); margin-bottom: 12px; }
-        .faq-answer { color: var(--text-medium); line-height: 1.7; }
+        .checkmark { color: var(--orange); font-weight: bold; font-size: 22px; }
+        .faq-item { background: var(--white); border-left: 6px solid var(--orange); padding: 40px; margin-bottom: 28px; border-radius: 0 12px 12px 0; box-shadow: 0 2px 16px rgba(0,0,0,0.04); }
+        .faq-question { font-size: 20px; font-weight: 700; color: var(--charcoal-blue); margin-bottom: 16px; }
+        .faq-answer { color: var(--text-medium); line-height: 1.75; font-size: 17px; }
         .final-cta { text-align: center; }
-        .final-cta p { color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto 40px; }
-        .urgency { background: rgba(183, 112, 79, 0.2); border: 1px solid var(--copper); padding: 16px 32px; border-radius: 8px; display: inline-block; margin-top: 32px; }
-        footer { padding: 48px 24px; background: #0f151d; color: var(--white); text-align: center; }
+        .final-cta p { color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto 48px; font-size: 20px; }
+        .urgency { background: rgba(230, 126, 80, 0.15); border: 2px solid var(--orange); padding: 20px 40px; border-radius: 12px; display: inline-block; margin-top: 40px; }
+        footer { padding: 56px 24px; background: #0f151d; color: var(--white); text-align: center; }
         footer p { opacity: 0.7; font-size: 14px; }
-        footer a { color: var(--copper); text-decoration: none; }
+        footer a { color: var(--orange); text-decoration: none; }
         .footer-links { margin-bottom: 24px; }
         .footer-links a { margin: 0 16px; }
-        .ai-badge { display: inline-block; background: rgba(183, 112, 79, 0.2); border: 1px solid var(--copper); padding: 8px 16px; border-radius: 20px; font-size: 12px; margin-bottom: 16px; opacity: 0.9; }
+        .ai-badge { display: inline-block; background: rgba(230, 126, 80, 0.15); border: 1px solid var(--orange); padding: 10px 20px; border-radius: 24px; font-size: 12px; margin-bottom: 20px; opacity: 0.9; }
         @media (max-width: 768px) {
-            .hero { padding: 100px 20px 80px; min-height: auto; }
-            .hero-meta { flex-direction: column; gap: 12px; }
+            .hero { padding: 120px 20px 100px; min-height: auto; }
+            .hero-meta { flex-direction: column; gap: 16px; }
             .btn-secondary { margin-left: 0; margin-top: 16px; }
             .hero-buttons { display: flex; flex-direction: column; gap: 16px; }
-            section { padding: 64px 20px; }
-            .price-amount { font-size: 48px; }
+            section { padding: 80px 20px; }
+            .price-amount { font-size: 56px; }
         }
     </style>
 </head>
@@ -235,14 +235,14 @@
                     <span class="price-original">$1,500</span>
                 </div>
                 <ul class="price-details">
-                    <li><span class="checkmark">&#10003;</span> 4 live weekly sessions (all recorded)</li>
-                    <li><span class="checkmark">&#10003;</span> Working framework by Week 4</li>
-                    <li><span class="checkmark">&#10003;</span> Private community access</li>
-                    <li><span class="checkmark">&#10003;</span> Lifetime access to refined materials</li>
-                    <li><span class="checkmark">&#10003;</span> Direct methodology feedback</li>
-                    <li><span class="checkmark">&#10003;</span> Limited to 15 students</li>
+                    <li><span class="checkmark">✓</span> 4 live weekly sessions (all recorded)</li>
+                    <li><span class="checkmark">✓</span> Working framework by Week 4</li>
+                    <li><span class="checkmark">✓</span> Private community access</li>
+                    <li><span class="checkmark">✓</span> Lifetime access to refined materials</li>
+                    <li><span class="checkmark">✓</span> Direct methodology feedback</li>
+                    <li><span class="checkmark">✓</span> Limited to 15 students</li>
                 </ul>
-                <a href="mailto:rageinbox@gmail.com?subject=Strategic%20Thinking%20Academy%20-%20Beta%20Enrollment&amp;body=I'm%20interested%20in%20joining%20the%20beta%20cohort." class="btn-primary" style="width: 100%;">Reserve Your Spot</a>
+                <a href="mailto:rageinbox@gmail.com?subject=Strategic%20Thinking%20Academy%20-%20Beta%20Enrollment&body=I'm%20interested%20in%20joining%20the%20beta%20cohort." class="btn-primary" style="width: 100%;">Reserve Your Spot</a>
             </div>
         </div>
     </section>
@@ -280,7 +280,7 @@
         <div class="container">
             <h2>Stop Solving the Same Problems Twice</h2>
             <p>Beta cohort starts December 1st. 15 spots. $750 (50% off regular pricing). Enrollment closes November 30th.</p>
-            <a href="mailto:rageinbox@gmail.com?subject=Strategic%20Thinking%20Academy%20-%20Beta%20Enrollment&amp;body=I'm%20interested%20in%20joining%20the%20beta%20cohort." class="btn-primary">Reserve Your Beta Spot</a>
+            <a href="mailto:rageinbox@gmail.com?subject=Strategic%20Thinking%20Academy%20-%20Beta%20Enrollment&body=I'm%20interested%20in%20joining%20the%20beta%20cohort." class="btn-primary">Reserve Your Beta Spot</a>
             <div class="urgency">
                 <strong>Enrollment closes November 30th, 2025</strong>
             </div>
