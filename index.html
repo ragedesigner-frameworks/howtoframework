@@ -19,7 +19,19 @@
             --text-medium: #5a5a5a;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: var(--text-dark); }
+        body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: var(--text-dark); padding-top: 80px; }
+        
+        /* Navigation */
+        nav { background: var(--white); padding: 16px 24px; border-bottom: 1px solid var(--light-gray); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        nav .container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo-link { display: flex; align-items: center; text-decoration: none; }
+        .logo-icon { height: 48px; width: auto; }
+        .nav-links { display: flex; align-items: center; gap: 32px; }
+        .nav-links a { color: var(--text-medium); text-decoration: none; font-weight: 500; transition: color 0.2s; font-size: 16px; }
+        .nav-links a:hover { color: var(--orange); }
+        .nav-cta { background: var(--orange); color: var(--white); padding: 10px 24px; border-radius: 8px; font-weight: 600; transition: all 0.2s; }
+        .nav-cta:hover { background: #d66e45; color: var(--white); transform: translateY(-1px); }
+        
         .hero { 
             background: linear-gradient(rgba(26, 35, 50, 0.7), rgba(26, 35, 50, 0.7)), url('https://ragedesigner.com/wp-content/uploads/2025/11/Rage-designer-landing-page-cover.png');
             background-size: cover;
@@ -82,23 +94,45 @@
         .final-cta { text-align: center; }
         .final-cta p { color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto 48px; font-size: 20px; }
         .urgency { background: rgba(230, 126, 80, 0.15); border: 2px solid var(--orange); padding: 20px 40px; border-radius: 12px; display: inline-block; margin-top: 40px; }
-        footer { padding: 56px 24px; background: #0f151d; color: var(--white); text-align: center; }
-        footer p { opacity: 0.7; font-size: 14px; }
+        
+        /* Footer */
+        footer { padding: 56px 24px 32px; background: #0f151d; color: var(--white); text-align: center; }
+        .footer-logo { max-width: 300px; height: auto; margin: 0 auto 32px; display: block; }
+        footer p { opacity: 0.7; font-size: 14px; line-height: 1.8; }
         footer a { color: var(--orange); text-decoration: none; }
         .footer-links { margin-bottom: 24px; }
         .footer-links a { margin: 0 16px; }
         .ai-badge { display: inline-block; background: rgba(230, 126, 80, 0.15); border: 1px solid var(--orange); padding: 10px 20px; border-radius: 24px; font-size: 12px; margin-bottom: 20px; opacity: 0.9; }
+        
         @media (max-width: 768px) {
+            body { padding-top: 70px; }
+            .logo-icon { height: 40px; }
+            .nav-links { display: none; }
             .hero { padding: 120px 20px 100px; min-height: auto; }
             .hero-meta { flex-direction: column; gap: 16px; }
             .btn-secondary { margin-left: 0; margin-top: 16px; }
             .hero-buttons { display: flex; flex-direction: column; gap: 16px; }
             section { padding: 80px 20px; }
             .price-amount { font-size: 56px; }
+            .footer-logo { max-width: 240px; }
         }
     </style>
 </head>
 <body>
+    <nav>
+        <div class="container">
+            <a href="/" class="logo-link">
+                <img src="https://ragedesigner.com/wp-content/uploads/2025/11/strategic-thinking-academy-icon-ragedesigner.png" alt="Strategic Thinking Academy" class="logo-icon">
+            </a>
+            <div class="nav-links">
+                <a href="#curriculum">Curriculum</a>
+                <a href="#pricing">Pricing</a>
+                <a href="https://whatisaframework.com">What is a Framework?</a>
+                <a href="#pricing" class="nav-cta">Enroll Now</a>
+            </div>
+        </div>
+    </nav>
+
     <section class="hero">
         <div class="hero-content">
             <span class="hero-badge">Beta Cohort - 50% Off</span>
@@ -288,6 +322,7 @@
     </section>
     
     <footer>
+        <img src="https://ragedesigner.com/wp-content/uploads/2025/11/strategic-thinking-academy-ragedesigner.png" alt="Strategic Thinking Academy" class="footer-logo">
         <div class="ai-badge">🤖 This site is built and managed autonomously by AI</div>
         <div class="footer-links">
             <a href="https://whatisaframework.com">What is a Framework?</a>
