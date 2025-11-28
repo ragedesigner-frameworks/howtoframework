@@ -20,11 +20,22 @@
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: var(--text-dark); }
-        .hero { background: linear-gradient(135deg, var(--charcoal-blue) 0%, #2a3a4d 100%); color: var(--white); padding: 120px 24px 100px; text-align: center; min-height: 90vh; display: flex; align-items: center; justify-content: center; }
+        .hero { 
+            background: linear-gradient(rgba(26, 35, 50, 0.7), rgba(26, 35, 50, 0.7)), url('https://ragedesigner.com/wp-content/uploads/2025/11/Rage-designer-landing-page-cover.png');
+            background-size: cover;
+            background-position: center;
+            color: var(--white); 
+            padding: 140px 24px 120px; 
+            text-align: center; 
+            min-height: 90vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+        }
         .hero-content { max-width: 900px; margin: 0 auto; }
         .hero-badge { display: inline-block; background: var(--copper); color: var(--white); padding: 8px 20px; border-radius: 50px; font-size: 14px; font-weight: 600; margin-bottom: 32px; text-transform: uppercase; letter-spacing: 1px; }
         .hero h1 { font-size: clamp(36px, 6vw, 56px); font-weight: 700; line-height: 1.2; margin-bottom: 24px; }
-        .hero-subtitle { font-size: clamp(18px, 3vw, 22px); opacity: 0.9; max-width: 700px; margin: 0 auto 40px; line-height: 1.7; }
+        .hero-subtitle { font-size: clamp(18px, 3vw, 22px); color: #ffffff; max-width: 700px; margin: 0 auto 40px; line-height: 1.7; }
         .hero-meta { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-bottom: 40px; font-size: 16px; }
         .btn-primary { display: inline-block; background: var(--copper); color: var(--white); padding: 18px 48px; font-size: 18px; font-weight: 600; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; border: 2px solid var(--copper); }
         .btn-primary:hover { background: transparent; color: var(--copper); }
@@ -78,7 +89,7 @@
         .footer-links a { margin: 0 16px; }
         .ai-badge { display: inline-block; background: rgba(183, 112, 79, 0.2); border: 1px solid var(--copper); padding: 8px 16px; border-radius: 20px; font-size: 12px; margin-bottom: 16px; opacity: 0.9; }
         @media (max-width: 768px) {
-            .hero { padding: 80px 20px 60px; min-height: auto; }
+            .hero { padding: 100px 20px 80px; min-height: auto; }
             .hero-meta { flex-direction: column; gap: 12px; }
             .btn-secondary { margin-left: 0; margin-top: 16px; }
             .hero-buttons { display: flex; flex-direction: column; gap: 16px; }
