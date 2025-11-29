@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Framework vs Template | Most People Think They're Building Frameworks (They're Not)</title>
+    <meta name="description" content="The confusion between frameworks, templates, and checklists keeps professionals stuck. Learn the distinction that changes how you approach recurring problems.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --charcoal-blue: #1A2332;
+            --logo-blue: #325d74;
+            --orange: #E67E50;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --text-dark: #2d2d2d;
+            --text-medium: #5a5a5a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: var(--text-dark); padding-top: 80px; }
+        
+        nav { background: var(--white); padding: 16px 50px; border-bottom: 1px solid var(--light-gray); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.04); display: flex; justify-content: space-between; align-items: center; }
+        .logo-link { display: flex; align-items: center; text-decoration: none; }
+        .logo-icon { height: 48px; width: auto; }
+        .nav-links { display: flex; align-items: center; gap: 32px; }
+        .nav-links a:not(.nav-cta) { color: var(--text-medium); text-decoration: none; font-weight: 500; transition: color 0.2s; font-size: 16px; }
+        .nav-links a:not(.nav-cta):hover { color: var(--orange); }
+        .nav-cta { background: var(--orange); color: var(--white) !important; padding: 10px 24px; border-radius: 8px; font-weight: 600; transition: all 0.2s; text-decoration: none; }
+        .nav-cta:hover { background: #d66e45; color: var(--white) !important; transform: translateY(-1px); }
+        
+        .hero { background: linear-gradient(rgba(26, 35, 50, 0.8), rgba(26, 35, 50, 0.8)), url('https://ragedesigner.com/wp-content/uploads/2025/11/Rage-designer-landing-page-cover.png'); background-size: cover; background-position: center; color: var(--white); padding: 140px 24px 120px; text-align: center; min-height: 70vh; display: flex; align-items: center; justify-content: center; }
+        .hero-content { max-width: 900px; margin: 0 auto; }
+        .hero-badge { display: inline-block; background: var(--orange); color: var(--white); padding: 10px 24px; border-radius: 50px; font-size: 13px; font-weight: 700; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 1.5px; }
+        .hero h1 { font-size: clamp(36px, 5.5vw, 52px); font-weight: 700; line-height: 1.2; margin-bottom: 28px; }
+        .hero-subtitle { font-size: clamp(18px, 2.5vw, 22px); color: rgba(255,255,255,0.9); max-width: 680px; margin: 0 auto 40px; line-height: 1.7; font-weight: 400; }
+        
+        .btn-primary { display: inline-block; background: var(--orange); color: var(--white); padding: 18px 48px; font-size: 18px; font-weight: 600; text-decoration: none; border-radius: 12px; transition: all 0.3s ease; border: 2px solid var(--orange); box-shadow: 0 4px 16px rgba(230, 126, 80, 0.3); }
+        .btn-primary:hover { background: transparent; color: var(--orange); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(230, 126, 80, 0.4); }
+        .btn-secondary { display: inline-block; background: transparent; color: var(--charcoal-blue); padding: 18px 48px; font-size: 18px; font-weight: 600; text-decoration: none; border-radius: 12px; border: 2px solid var(--charcoal-blue); transition: all 0.3s ease; margin-left: 16px; }
+        .btn-secondary:hover { background: var(--charcoal-blue); color: var(--white); }
+        
+        section { padding: 100px 24px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .container-wide { max-width: 1100px; margin: 0 auto; }
+        .section-label { color: var(--orange); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 20px; }
+        h2 { font-size: clamp(28px, 4vw, 40px); color: var(--charcoal-blue); margin-bottom: 24px; line-height: 1.3; font-weight: 700; }
+        p { font-size: 18px; line-height: 1.8; margin-bottom: 24px; color: var(--text-medium); }
+        
+        .problem { background: var(--white); }
+        .distinction { background: var(--light-gray); }
+        .deeper { background: var(--white); }
+        .test { background: var(--charcoal-blue); color: var(--white); }
+        .test h2 { color: var(--white); }
+        .test p { color: rgba(255,255,255,0.85); }
+        .cta-section { background: var(--light-gray); text-align: center; }
+        
+        .three-column { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px; }
+        .column-card { padding: 36px; border-radius: 16px; text-align: center; }
+        .column-card.checklist { background: var(--white); border: 2px solid #ddd; }
+        .column-card.template { background: var(--white); border: 2px solid var(--logo-blue); }
+        .column-card.framework { background: var(--white); border: 3px solid var(--orange); box-shadow: 0 8px 32px rgba(230, 126, 80, 0.15); }
+        .column-card h3 { font-size: 24px; margin-bottom: 16px; color: var(--charcoal-blue); }
+        .column-card.framework h3 { color: var(--orange); }
+        .column-card .definition { font-size: 16px; color: var(--text-medium); margin-bottom: 20px; line-height: 1.6; }
+        .column-card .example { background: var(--light-gray); padding: 16px; border-radius: 8px; font-size: 14px; color: var(--text-dark); }
+        .column-card.framework .example { background: rgba(230, 126, 80, 0.1); }
+        
+        .insight-box { background: var(--charcoal-blue); color: var(--white); padding: 48px; border-radius: 16px; margin: 48px 0; }
+        .insight-box h3 { color: var(--orange); font-size: 22px; margin-bottom: 16px; }
+        .insight-box p { color: rgba(255,255,255,0.9); margin-bottom: 0; }
+        
+        .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
+        .test-item { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 28px; }
+        .test-item h4 { color: var(--orange); font-size: 18px; margin-bottom: 12px; }
+        .test-item p { font-size: 16px; color: rgba(255,255,255,0.8); margin-bottom: 0; line-height: 1.6; }
+        
+        .spectrum { margin: 48px 0; padding: 40px; background: var(--white); border-radius: 16px; border: 2px solid var(--light-gray); }
+        .spectrum-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+        .spectrum-label { font-weight: 600; color: var(--text-dark); }
+        .spectrum-line { flex: 1; height: 4px; background: linear-gradient(to right, #ddd, var(--logo-blue), var(--orange)); margin: 0 20px; border-radius: 2px; }
+        .spectrum-desc { display: flex; justify-content: space-between; font-size: 14px; color: var(--text-medium); }
+        
+        .final-cta { background: var(--charcoal-blue); color: var(--white); text-align: center; }
+        .final-cta h2 { color: var(--white); }
+        .final-cta p { color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto 40px; }
+        
+        footer { padding: 56px 24px 32px; background: #0f151d; color: var(--white); text-align: center; }
+        .footer-logo { max-width: 300px; height: auto; margin: 0 auto 32px; display: block; }
+        footer p { opacity: 0.7; font-size: 14px; line-height: 1.8; }
+        footer a { color: var(--orange); text-decoration: none; }
+        .footer-links { margin-bottom: 24px; }
+        .footer-links a { margin: 0 16px; }
+        .ai-badge { display: inline-block; background: rgba(230, 126, 80, 0.15); border: 1px solid var(--orange); padding: 10px 20px; border-radius: 24px; font-size: 12px; margin-bottom: 20px; opacity: 0.9; }
+        
+        @media (max-width: 768px) { 
+            body { padding-top: 70px; } 
+            nav { padding: 16px 24px; } 
+            .logo-icon { height: 40px; } 
+            .nav-links { display: none; } 
+            .hero { padding: 100px 20px 80px; min-height: auto; } 
+            section { padding: 70px 20px; } 
+            .three-column { grid-template-columns: 1fr; }
+            .btn-secondary { margin-left: 0; margin-top: 16px; display: block; }
+            .footer-logo { max-width: 240px; } 
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="logo-link"><img src="https://ragedesigner.com/wp-content/uploads/2025/11/sta-icon-1.png" alt="Strategic Thinking Academy" class="logo-icon"></a>
+        <div class="nav-links">
+            <a href="/">Academy</a>
+            <a href="/force-multipliers.html">Force Multipliers</a>
+            <a href="https://whatisaframework.com">What is a Framework?</a>
+            <a href="/#pricing" class="nav-cta">Enroll Now</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">Methodology</span>
+            <h1>Most People Think They're Building Frameworks. They're Not.</h1>
+            <p class="hero-subtitle">The confusion between frameworks, templates, and checklists keeps professionals stuck in linear thinking. This distinction changes everything.</p>
+            <a href="/#pricing" class="btn-primary">Learn Framework Generation</a>
+        </div>
+    </section>
+
+    <section class="problem">
+        <div class="container">
+            <p class="section-label">The Confusion</p>
+            <h2>Why This Matters More Than You Think</h2>
+            <p>Ask ten professionals what a framework is and you'll get ten different answers. Some describe templates. Others describe checklists. A few describe processes.</p>
+            <p>This isn't semantic nitpicking. The confusion has real consequences. Professionals who think they're building frameworks are often building something that can't compound, can't transfer across contexts, and can't create the exponential returns that true frameworks generate.</p>
+            <p>Understanding the distinction is the first step toward systematic thinking that actually multiplies your effectiveness.</p>
+        </div>
+    </section>
+
+    <section class="distinction">
+        <div class="container-wide">
+            <p class="section-label">The Distinction</p>
+            <h2>Three Tools, Three Purposes</h2>
+            <div class="three-column">
+                <div class="column-card checklist">
+                    <h3>Checklist</h3>
+                    <p class="definition">A linear list of items to complete. No decision logic. No conditional paths. You go through it top to bottom.</p>
+                    <div class="example"><strong>Example:</strong> Pre-flight checklist. Packing list. Morning routine items.</div>
+                </div>
+                <div class="column-card template">
+                    <h3>Template</h3>
+                    <p class="definition">A pre-structured format for filling in specific information. Minimal decision-making required. Same structure, different details.</p>
+                    <div class="example"><strong>Example:</strong> Invoice template. Email template. Proposal format.</div>
+                </div>
+                <div class="column-card framework">
+                    <h3>Framework</h3>
+                    <p class="definition">A systematic approach with decision logic, conditional paths, and strategic thinking. Adapts to context while maintaining structure.</p>
+                    <div class="example"><strong>Example:</strong> Sales methodology. Content strategy system. Problem-solving approach.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="deeper">
+        <div class="container">
+            <p class="section-label">The Deeper Point</p>
+            <h2>Why Frameworks Compound</h2>
+            <p>Checklists ensure you don't forget things. Templates save time on formatting. Both are useful. Neither compounds.</p>
+            <p>Frameworks are different. They capture decision logic—the thinking behind the doing. When you build a framework, you're encoding judgment, not just steps.</p>
+            
+            <div class="insight-box">
+                <h3>The Key Insight</h3>
+                <p>Templates answer "what goes here?" Frameworks answer "how do I think about this?" That's why frameworks transfer across contexts while templates stay locked to their original purpose.</p>
+            </div>
+            
+            <p>A sales template gives you fields to fill in. A sales framework gives you a way to think about every conversation that adapts to the specific client, context, and objective.</p>
+            <p>This is why Sebastian uses his framework every single day nine weeks later. It's not a script he follows—it's a thinking tool that makes him more effective in any sales situation.</p>
+            
+            <div class="spectrum">
+                <div class="spectrum-bar">
+                    <span class="spectrum-label">Checklist</span>
+                    <div class="spectrum-line"></div>
+                    <span class="spectrum-label">Framework</span>
+                </div>
+                <div class="spectrum-desc">
+                    <span>Linear • Fixed • Completion-focused</span>
+                    <span>Adaptive • Strategic • Judgment-encoding</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="test">
+        <div class="container-wide">
+            <p class="section-label">The Test</p>
+            <h2>Is It Actually a Framework?</h2>
+            <p>Most things called "frameworks" are actually templates or checklists in disguise. Here's how to tell the difference:</p>
+            
+            <div class="test-grid">
+                <div class="test-item">
+                    <h4>Does it include decision logic?</h4>
+                    <p>If there are no "if this, then that" elements, it's probably a checklist or template.</p>
+                </div>
+                <div class="test-item">
+                    <h4>Does it transfer across contexts?</h4>
+                    <p>If it only works in one specific situation, it's not a framework—it's a procedure.</p>
+                </div>
+                <div class="test-item">
+                    <h4>Does it encode judgment?</h4>
+                    <p>If it tells you what to do but not how to think, it's missing the framework essence.</p>
+                </div>
+                <div class="test-item">
+                    <h4>Does it improve with use?</h4>
+                    <p>True frameworks get refined through application. Static tools don't qualify.</p>
+                </div>
+                <div class="test-item">
+                    <h4>Can someone else apply it?</h4>
+                    <p>If it requires you specifically to work, the methodology isn't properly externalized.</p>
+                </div>
+                <div class="test-item">
+                    <h4>Does it create compound returns?</h4>
+                    <p>If using it today doesn't make tomorrow easier, it's not multiplying your effectiveness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <p class="section-label">The Capability</p>
+            <h2>Learn to Build True Frameworks</h2>
+            <p>Strategic Thinking Academy teaches framework generation—the methodology for creating systematic approaches that encode your judgment, transfer across contexts, and compound over time.</p>
+            <p>In four weeks, you'll build your first true framework from a real problem you're facing. Then you'll have the capability to generate more.</p>
+            <div style="margin-top: 32px;">
+                <a href="/#pricing" class="btn-primary">Reserve Your Spot - $750</a>
+                <a href="/" class="btn-secondary">See Full Curriculum</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container">
+            <h2>Stop Building Templates. Start Building Frameworks.</h2>
+            <p>The distinction isn't academic. It's the difference between linear work and compound returns. The methodology is learnable.</p>
+            <a href="/#pricing" class="btn-primary">Join the Beta Cohort</a>
+        </div>
+    </section>
+
+    <footer>
+        <img src="https://ragedesigner.com/wp-content/uploads/2025/11/strategic-thinking-academy-ragedesigner.png" alt="Strategic Thinking Academy" class="footer-logo">
+        <div class="ai-badge">🤖 This site is built and managed autonomously by AI</div>
+        <div class="footer-links">
+            <a href="https://whatisaframework.com">What is a Framework?</a>
+            <a href="https://ragedesigner.com">RageDesigner</a>
+        </div>
+        <p>Strategic Thinking Academy is part of <a href="https://ragedesigner.com">RageDesigner</a></p>
+        <p style="margin-top: 8px;">© 2025 <a href="https://ragedesigner.com">RageDesigner</a>. All rights reserved.</p>
+    </footer>
+</body>
+</html>
