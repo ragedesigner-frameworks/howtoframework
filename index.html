@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strategic Thinking Academy | Learn to Build Frameworks That Solve Problems Forever</title>
     <meta name="description" content="Transform recurring challenges into reusable solutions. Strategic Thinking Academy teaches framework generation methodology. Beta cohort starts December 1, 2025. $750.">
+    <link rel="icon" type="image/png" href="https://ragedesigner.com/wp-content/uploads/2025/11/whatisaframework.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -45,6 +46,18 @@
         .container-wide { max-width: 1100px; margin: 0 auto; }
         .section-label { color: var(--orange); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 20px; }
         h2 { font-size: clamp(32px, 5vw, 44px); color: var(--charcoal-blue); margin-bottom: 28px; line-height: 1.25; font-weight: 700; }
+        
+        /* Strategic Resources Section */
+        .resources { background: var(--charcoal-blue); color: var(--white); }
+        .resources h2 { color: var(--white); }
+        .resources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-top: 48px; }
+        .resource-card { background: var(--white); color: var(--text-dark); padding: 40px; border-radius: 16px; text-decoration: none; display: block; transition: all 0.3s ease; border: 3px solid transparent; }
+        .resource-card:hover { border-color: var(--orange); transform: translateY(-8px); box-shadow: 0 16px 40px rgba(230, 126, 80, 0.2); }
+        .resource-icon { font-size: 48px; margin-bottom: 20px; display: block; }
+        .resource-card h3 { color: var(--charcoal-blue); font-size: 24px; margin-bottom: 16px; font-weight: 700; }
+        .resource-card p { color: var(--text-medium); font-size: 16px; line-height: 1.6; margin-bottom: 0; }
+        .resource-link { display: inline-block; margin-top: 20px; color: var(--orange); font-weight: 600; font-size: 15px; }
+        
         .problem, .curriculum, .validation, .pricing { background: var(--white); }
         .solution, .testimonial, .faq { background: var(--light-gray); }
         .differentiator, .final-cta { background: var(--charcoal-blue); color: var(--white); }
@@ -88,24 +101,83 @@
         .footer-links { margin-bottom: 16px; }
         .footer-links a { margin: 0 16px; }
         .ai-badge { display: inline-block; background: rgba(230, 126, 80, 0.15); border: 1px solid var(--orange); padding: 10px 20px; border-radius: 24px; font-size: 12px; margin-bottom: 20px; opacity: 0.9; }
-        @media (max-width: 768px) { body { padding-top: 70px; } nav { padding: 16px 24px; } .logo-icon { height: 40px; } .nav-links { display: none; } .hero { padding: 120px 20px 100px; min-height: auto; } .hero-meta { flex-direction: column; gap: 16px; } .btn-secondary { margin-left: 0; margin-top: 16px; } .hero-buttons { display: flex; flex-direction: column; gap: 16px; } section { padding: 80px 20px; } .price-amount { font-size: 56px; } .footer-logo { max-width: 240px; } }
+        @media (max-width: 768px) { 
+            body { padding-top: 70px; } 
+            nav { padding: 16px 24px; } 
+            .logo-icon { height: 40px; } 
+            .nav-links { display: none; } 
+            .hero { padding: 120px 20px 100px; min-height: auto; } 
+            .hero-meta { flex-direction: column; gap: 16px; } 
+            .btn-secondary { margin-left: 0; margin-top: 16px; } 
+            .hero-buttons { display: flex; flex-direction: column; gap: 16px; } 
+            section { padding: 80px 20px; } 
+            .resources-grid { grid-template-columns: 1fr; }
+            .price-amount { font-size: 56px; } 
+            .footer-logo { max-width: 240px; } 
+        }
     </style>
 </head>
 <body>
     <nav>
         <a href="/" class="logo-link"><img src="https://ragedesigner.com/wp-content/uploads/2025/11/sta-icon-1.png" alt="Strategic Thinking Academy" class="logo-icon"></a>
-        <div class="nav-links"><a href="#curriculum">Curriculum</a><a href="/business-therapist">Business Therapist</a><a href="#pricing">Pricing</a><a href="https://whatisaframework.com">What is a Framework?</a><a href="#pricing" class="nav-cta">Enroll Now</a></div>
+        <div class="nav-links"><a href="#curriculum">Curriculum</a><a href="#pricing">Pricing</a><a href="https://whatisaframework.com">What is a Framework?</a><a href="#pricing" class="nav-cta">Enroll Now</a></div>
     </nav>
-    <section class="hero"><div class="hero-content"><span class="hero-badge">Beta Cohort - 50% Off</span><h1>Solve Problems Once,<br>Apply Solutions Forever</h1><p class="hero-subtitle">Those breakthrough moments you can't quite recreate? They're more systematic than you think. Strategic Thinking Academy teaches you to architect your insights into frameworks you can use again and again.</p><div class="hero-meta"><span>Starts December 1, 2025</span><span>4 Weeks</span><span>15 Students Maximum</span></div><div class="hero-buttons"><a href="#pricing" class="btn-primary">Reserve Your Spot - $750</a><a href="#curriculum" class="btn-secondary">See the Curriculum</a></div></div></section>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">Beta Cohort - 50% Off</span>
+            <h1>Solve Problems Once,<br>Apply Solutions Forever</h1>
+            <p class="hero-subtitle">Those breakthrough moments you can't quite recreate? They're more systematic than you think. Strategic Thinking Academy teaches you to architect your insights into frameworks you can use again and again.</p>
+            <div class="hero-meta"><span>Starts December 1, 2025</span><span>4 Weeks</span><span>15 Students Maximum</span></div>
+            <div class="hero-buttons"><a href="#pricing" class="btn-primary">Reserve Your Spot - $750</a><a href="#curriculum" class="btn-secondary">See the Curriculum</a></div>
+        </div>
+    </section>
+    
+    <section class="resources">
+        <div class="container-wide">
+            <p class="section-label">Core Concepts</p>
+            <h2>Strategic Intelligence Resources</h2>
+            <div class="resources-grid">
+                <a href="/business-therapist" class="resource-card">
+                    <span class="resource-icon">🧠</span>
+                    <h3>Business Therapist Framework</h3>
+                    <p>Transform frustrating problems into systematic solutions through conversational AI collaboration. Natural dialogue meets strategic intelligence.</p>
+                    <span class="resource-link">Explore the Framework →</span>
+                </a>
+                <a href="/force-multipliers" class="resource-card">
+                    <span class="resource-icon">⚡</span>
+                    <h3>Force Multipliers</h3>
+                    <p>Discover how systematic frameworks create compound advantages that solve multiple problems simultaneously while building permanent capability.</p>
+                    <span class="resource-link">Learn About Force Multipliers →</span>
+                </a>
+                <a href="/framework-vs-template.html" class="resource-card">
+                    <span class="resource-icon">🔧</span>
+                    <h3>Framework vs Template</h3>
+                    <p>Understand the critical difference between reusable thinking systems and fill-in-the-blank documents. One multiplies intelligence, the other doesn't.</p>
+                    <span class="resource-link">See the Difference →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    
     <section class="problem"><div class="container"><p class="section-label">The Challenge</p><h2>You've Solved This Problem Before</h2><p>You know that feeling. You crushed a complex challenge, delivered something brilliant, and then six months later you're staring at a similar problem wondering how you did it the first time.</p><p>Your expertise is real. Your insights are valuable. But they're locked inside individual moments instead of captured in systems you can deploy again and again.</p><p>Most professionals operate this way their entire careers. Solving the same types of problems repeatedly, never quite systematizing the approach that made them successful.</p></div></section>
+    
     <section class="solution"><div class="container"><p class="section-label">The Solution</p><h2>Framework Generation Capability</h2><p>Strategic Thinking Academy doesn't teach you frameworks to memorize. It teaches you the capability to generate frameworks from your own expertise.</p><p>In four weeks, you'll build your first systematic framework from a real problem you're facing right now. Then you'll have the methodology to create frameworks for any recurring challenge you encounter.</p><p>This is the difference between framework consumption (memorizing someone else's system) and framework generation (building your own). One makes you dependent. The other makes you dangerous.</p></div></section>
+    
     <section class="curriculum" id="curriculum"><div class="container-wide"><p class="section-label">Four-Week Curriculum</p><h2>From Problem to Working Framework</h2><div class="week-grid"><div class="week-card"><span class="week-number">Week 1</span><h3>Framework Foundations</h3><p>Learn systematic thinking protocols that turn scattered insights into structured approaches. Develop pattern recognition that spots framework opportunities. Identify the real problem your framework needs to solve.</p></div><div class="week-card"><span class="week-number">Week 2</span><h3>Library Building and Force Multipliers</h3><p>Understand compound advantage through systematic documentation. Build your first framework components. Learn why framework libraries create exponential returns.</p></div><div class="week-card"><span class="week-number">Week 3</span><h3>Architecture Refinement</h3><p>Master the 5-layer framework DNA structure. Learn cross-domain scaling that makes frameworks work across different contexts. Refine your framework for real-world deployment.</p></div><div class="week-card"><span class="week-number">Week 4</span><h3>Testing and Validation</h3><p>Deploy your framework in actual work. Gather evidence of effectiveness. Learn the validation protocols that prove your framework works. Graduate with a battle-tested system.</p></div></div></div></section>
+    
     <section class="differentiator"><div class="container-wide"><p class="section-label">What Makes This Different</p><h2>Framework Generation vs Framework Consumption</h2><div class="diff-grid"><div class="diff-item"><h3>Not Another Framework to Memorize</h3><p>Most training teaches you Six Sigma, Agile, or Design Thinking. You memorize steps, apply them rigidly, and wonder why results vary. We teach you to build frameworks that fit your specific context.</p></div><div class="diff-item"><h3>Systematic Thinking is Learnable</h3><p>Strategic thinking isn't innate talent. It's a methodology that can be taught, practiced, and mastered. We've validated this across 115+ frameworks spanning federal contracting, AI strategy, content systems, and crisis response.</p></div><div class="diff-item"><h3>Cross-Domain Validation</h3><p>Our methodology works across languages (Sebastian uses his framework daily for Spanish sales), across industries (federal contracting to sales professionals), and across skill levels (individual contributors to executives).</p></div></div></div></section>
+    
     <section class="validation"><div class="container-wide"><p class="section-label">Proof It Works</p><h2>Results From Systematic Thinking</h2><div class="proof-grid"><div class="proof-item"><div class="proof-number">115+</div><div class="proof-label">Frameworks Generated</div></div><div class="proof-item"><div class="proof-number">18</div><div class="proof-label">Months Building This Methodology</div></div><div class="proof-item"><div class="proof-number">60%</div><div class="proof-label">Efficiency Improvement</div></div><div class="proof-item"><div class="proof-number">5</div><div class="proof-label">Departments Adopted</div></div></div></div></section>
+    
     <section class="testimonial"><div class="container"><p class="section-label">Real-World Validation</p><h2>Sebastian's Story</h2><div class="quote-box"><p class="quote-text">"I use it EVERY. SINGLE. DAY. Now it's just part of my process. Client conversations are way easier now."</p><p class="quote-author">Sebastian</p><p class="quote-role">Sales Professional using his framework daily for 9+ weeks</p></div><p style="margin-top: 24px;">Sebastian handles Spanish-language technical sales. The framework we built together transformed his daily workflow. This is what framework generation produces: tools people actually use, not binders that collect dust.</p></div></section>
+    
     <section class="pricing" id="pricing"><div class="container"><p class="section-label">Beta Cohort</p><h2>Join the First Cohort</h2><div class="price-card"><span class="price-badge">Beta Pricing - 50% Off</span><div><span class="price-amount">$750</span><span class="price-original">$1,500</span></div><ul class="price-details"><li><span class="checkmark">✓</span> 4 live weekly sessions (all recorded)</li><li><span class="checkmark">✓</span> Working framework by Week 4</li><li><span class="checkmark">✓</span> Private community access</li><li><span class="checkmark">✓</span> Lifetime access to refined materials</li><li><span class="checkmark">✓</span> Direct methodology feedback</li><li><span class="checkmark">✓</span> Limited to 15 students</li></ul><a href="mailto:rageinbox@gmail.com?subject=Strategic%20Thinking%20Academy%20-%20Beta%20Enrollment&body=I'm%20interested%20in%20joining%20the%20beta%20cohort." class="btn-primary" style="width: 100%;">Reserve Your Spot</a></div></div></section>
+    
     <section class="faq"><div class="container"><p class="section-label">Questions</p><h2>Frequently Asked</h2><div class="faq-list"><div class="faq-item"><p class="faq-question">Do I need strategic thinking experience?</p><p class="faq-answer">No. Strategic thinking is learnable technology, not innate talent. The methodology works whether you're new to systematic approaches or already consider yourself a strategic thinker.</p></div><div class="faq-item"><p class="faq-question">What if I can't attend live sessions?</p><p class="faq-answer">All sessions are recorded. You'll have lifetime access to recordings plus async support through the private community.</p></div><div class="faq-item"><p class="faq-question">Will this work for my industry?</p><p class="faq-answer">Yes. Framework generation methodology transfers across domains. We've validated it across federal contracting, healthcare SaaS, content marketing, sales, creative work, and crisis response.</p></div><div class="faq-item"><p class="faq-question">What's the time commitment?</p><p class="faq-answer">Plan for 4 hours per week: 1 hour live session plus 3 hours of framework building and application.</p></div><div class="faq-item"><p class="faq-question">What if I don't create a working framework?</p><p class="faq-answer">The methodology is designed to produce results. If you complete the program and don't have a working framework, we'll work with you directly until you do.</p></div></div></div></section>
+    
     <section class="final-cta"><div class="container"><h2>Stop Solving the Same Problems Twice</h2><p>Beta cohort starts December 1st. 15 spots. $750 (50% off regular pricing). Enrollment closes November 30th.</p><a href="mailto:rageinbox@gmail.com?subject=Strategic%20Thinking%20Academy%20-%20Beta%20Enrollment&body=I'm%20interested%20in%20joining%20the%20beta%20cohort." class="btn-primary">Reserve Your Beta Spot</a><div class="urgency"><strong>Enrollment closes November 30th, 2025</strong></div></div></section>
-    <footer><img src="https://ragedesigner.com/wp-content/uploads/2025/11/strategic-thinking-academy-ragedesigner.png" alt="Strategic Thinking Academy" class="footer-logo"><div class="ai-badge">🤖 This site is built and managed autonomously by AI</div><div class="footer-links"><a href="https://whatisaframework.com">What is a Framework?</a> | <a href="/business-therapist">Business Therapist</a> | <a href="/ai.html">AI Reference</a></div><p>Built by <a href="https://ragedesigner.com">RageDesigner</a> | © 2025</p></footer>
+    
+    <footer><img src="https://ragedesigner.com/wp-content/uploads/2025/11/strategic-thinking-academy-ragedesigner.png" alt="Strategic Thinking Academy" class="footer-logo"><div class="ai-badge">🤖 This site is built and managed autonomously by AI</div><div class="footer-links"><a href="https://whatisaframework.com">What is a Framework?</a> | <a href="/ai.html">AI Reference</a></div><p>Built by <a href="https://ragedesigner.com">RageDesigner</a> | © 2025</p></footer>
 </body>
 </html>
