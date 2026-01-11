@@ -16,6 +16,40 @@ This prevents the "fix one thing, break another" pattern.
 
 ---
 
+## 🚨 INFRASTRUCTURE THAT MUST NEVER BE DELETED
+
+These elements are REQUIRED on every single page. If you're updating a page and these are missing, ADD THEM. If they exist, DO NOT REMOVE THEM.
+
+### Google Analytics (REQUIRED - DO NOT DELETE)
+```html
+<!-- Google Analytics - REQUIRED ON EVERY PAGE -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TXBXZ335ZR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TXBXZ335ZR');
+</script>
+```
+**GA Property ID:** G-TXBXZ335ZR
+**Why it matters:** Without this, we have ZERO visibility into site traffic. This is how we know if the money engine is working.
+
+### Google Site Verification (REQUIRED - DO NOT DELETE)
+```html
+<meta name="google-site-verification" content="lLcSYm1T_e7bvoNuLK89qkB7t0-fj_nLDA3_FKvJcrc" />
+```
+**Why it matters:** Required for Search Console access. Deleting this breaks our SEO monitoring.
+
+### Social Sharing Images (REQUIRED - DO NOT DELETE)
+```html
+<meta property="og:image" content="https://app.ragedesigner.com/wp-content/uploads/2025/11/strategic-thinking-academy-ragedesigner.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://app.ragedesigner.com/wp-content/uploads/2025/11/strategic-thinking-academy-ragedesigner.png">
+```
+**Why it matters:** Without these, social shares look unprofessional - no image, just text.
+
+---
+
 ## 🎨 CSS VARIABLES (Required in every page)
 
 ```css
@@ -35,37 +69,50 @@ This prevents the "fix one thing, break another" pattern.
 
 ---
 
-## 📋 REQUIRED META TAGS
+## 📋 COMPLETE HEAD SECTION TEMPLATE
 
-⚠️ **CURRENT ISSUE:** howtoframework.com is MISSING og:image tags. This needs to be fixed.
-
-Every page MUST include these in `<head>`:
+Every page MUST include ALL of these in `<head>`:
 
 ```html
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>[PAGE TITLE] | Strategic Thinking Academy</title>
-<meta name="description" content="[PAGE DESCRIPTION]">
-<meta name="google-site-verification" content="lLcSYm1T_e7bvoNuLK89qkB7t0-fj_nLDA3_FKvJcrc" />
-<meta property="og:title" content="[PAGE TITLE]">
-<meta property="og:description" content="[PAGE DESCRIPTION]">
-<meta property="og:image" content="https://app.ragedesigner.com/wp-content/uploads/2025/11/strategic-thinking-academy-ragedesigner.png">
-<meta property="og:url" content="https://howtoframework.com/[PAGE-SLUG]">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://app.ragedesigner.com/wp-content/uploads/2025/11/strategic-thinking-academy-ragedesigner.png">
-<link rel="icon" type="image/png" href="https://app.ragedesigner.com/wp-content/uploads/2025/11/whatisaframework.png">
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TXBXZ335ZR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-TXBXZ335ZR');
-</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[PAGE TITLE] | Strategic Thinking Academy</title>
+    <meta name="description" content="[PAGE DESCRIPTION]">
+    
+    <!-- Google Site Verification - DO NOT DELETE -->
+    <meta name="google-site-verification" content="lLcSYm1T_e7bvoNuLK89qkB7t0-fj_nLDA3_FKvJcrc" />
+    
+    <!-- Social Sharing - DO NOT DELETE -->
+    <meta property="og:title" content="[PAGE TITLE]">
+    <meta property="og:description" content="[PAGE DESCRIPTION]">
+    <meta property="og:image" content="https://app.ragedesigner.com/wp-content/uploads/2025/11/strategic-thinking-academy-ragedesigner.png">
+    <meta property="og:url" content="https://howtoframework.com/[PAGE-SLUG]">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://app.ragedesigner.com/wp-content/uploads/2025/11/strategic-thinking-academy-ragedesigner.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://app.ragedesigner.com/wp-content/uploads/2025/11/whatisaframework.png">
+    
+    <!-- Google Analytics - DO NOT DELETE -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TXBXZ335ZR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TXBXZ335ZR');
+    </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS goes here */
+    </style>
+</head>
 ```
 
 **Default OG Image:** `https://app.ragedesigner.com/wp-content/uploads/2025/11/strategic-thinking-academy-ragedesigner.png`
@@ -238,23 +285,37 @@ footer a { color: var(--primary); text-decoration: none; }
 
 ## ✅ CHECKLIST: Before Deploying Any Page
 
-- [ ] CSS variables include all required values
-- [ ] og:image meta tag present (CURRENTLY MISSING - FIX NEEDED)
+### 🚨 INFRASTRUCTURE (Non-negotiable)
+- [ ] Google Analytics code present (G-TXBXZ335ZR)
+- [ ] Google site verification tag present
+- [ ] og:image meta tag present
 - [ ] twitter:image meta tag present
-- [ ] Google Analytics code included
-- [ ] Google site verification tag included
+
+### Structure
+- [ ] CSS variables include all required values
 - [ ] Header HTML matches this reference exactly
 - [ ] Footer HTML matches this reference exactly
 - [ ] Footer text is WHITE (`var(--white)`)
 - [ ] RageDesigner link is ORANGE (`var(--primary)`)
 - [ ] Mobile menu JS included
 - [ ] Logo URL: `https://app.ragedesigner.com/wp-content/uploads/2025/11/sta-icon-1.png`
+- [ ] Copyright year is 2026
 
 ---
 
 ## 🚫 KNOWN BAD PATTERNS (Do Not Use)
 
-### Missing og:image (CURRENT ISSUE):
+### ❌ Missing Google Analytics (CRITICAL):
+```html
+<!-- BAD - page is invisible to analytics -->
+<head>
+    <title>Page Title</title>
+    <!-- NO GA CODE = we can't track anything -->
+</head>
+```
+**Impact:** Zero visibility into whether the money engine is working. Fix immediately.
+
+### ❌ Missing og:image:
 ```html
 <!-- BAD - no social sharing image -->
 <head>
@@ -263,7 +324,7 @@ footer a { color: var(--primary); text-decoration: none; }
 </head>
 ```
 
-### Wrong Contact URL:
+### ❌ Wrong Contact URL:
 ```html
 <!-- BAD - missing app. prefix -->
 <a href="https://ragedesigner.com/contact">Contact</a>
@@ -272,9 +333,9 @@ footer a { color: var(--primary); text-decoration: none; }
 <a href="https://app.ragedesigner.com/contact">Contact</a>
 ```
 
-### Wrong Footer (causes invisible text):
-```html
-<!-- BAD - footer p color inherits charcoal-blue -->
+### ❌ Wrong Footer (causes invisible text):
+```css
+/* BAD - footer p color inherits charcoal-blue */
 footer p { color: var(--charcoal-blue); }
 ```
 
@@ -304,6 +365,7 @@ This site links to:
 | Date | Change | Source |
 |------|--------|--------|
 | 2026-01-10 | Initial template reference created | index.html SHA: 24213aae |
+| 2026-01-10 | Added prominent GA/infrastructure section to prevent deletion | Template update |
 
 ---
 
@@ -311,6 +373,7 @@ This site links to:
 
 1. **Missing og:image tags** - Need to add to index.html and all other pages
 2. **Copyright year** - Footer shows 2025, should be 2026
+3. **Contact CTAs** - Currently mailto, should link to app.ragedesigner.com/contact
 
 ---
 
