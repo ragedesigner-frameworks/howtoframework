@@ -84,6 +84,17 @@
         .container-wide { max-width: 1100px; margin: 0 auto; }
         .section-label { color: var(--orange); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 20px; }
         h2 { font-size: clamp(32px, 5vw, 44px); color: var(--charcoal-blue); margin-bottom: 28px; line-height: 1.25; font-weight: 700; }
+        
+        /* Trust Signals Section */
+        .trust-signals { background: var(--light-gray); padding: 80px 24px; }
+        .trust-signals-content { max-width: 900px; margin: 0 auto; text-align: center; }
+        .trust-quote { font-size: 24px; font-style: italic; color: var(--charcoal-blue); line-height: 1.6; margin-bottom: 16px; font-weight: 500; }
+        .trust-author { font-size: 16px; color: var(--text-medium); margin-bottom: 48px; }
+        .trust-checks { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px 48px; margin-bottom: 32px; }
+        .trust-check { display: flex; align-items: center; gap: 12px; font-size: 17px; color: var(--text-dark); font-weight: 500; }
+        .trust-check .checkmark { color: var(--orange); font-size: 20px; }
+        .trust-guarantee { font-size: 18px; color: var(--orange); font-weight: 600; margin-top: 24px; }
+        
         .resources { background: var(--charcoal-blue); color: var(--white); }
         .resources h2 { color: var(--white); }
         .resources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-top: 48px; }
@@ -136,7 +147,7 @@
         .footer-links a { color: var(--white); margin: 0 16px; transition: color 0.3s ease; }
         .footer-links a:hover { color: var(--primary); }
         .ai-badge { display: inline-block; background: rgba(230, 126, 80, 0.15); border: 1px solid var(--orange); padding: 10px 20px; border-radius: 24px; font-size: 12px; margin-bottom: 20px; color: var(--primary); }
-        @media (max-width: 768px) { body { padding-top: 70px; } nav#main-header { padding: 16px 24px; } nav#main-header.scrolled { padding: 12px 24px; } .logo-icon { height: 40px; } .nav-links.desktop-nav { display: none; } .mobile-menu-toggle { display: flex; } .hero { padding: 120px 20px 100px; min-height: auto; } .hero-meta { flex-direction: column; gap: 16px; } .btn-secondary { margin-left: 0; margin-top: 16px; } .hero-buttons { display: flex; flex-direction: column; gap: 16px; } section { padding: 80px 20px; } .resources-grid { grid-template-columns: 1fr; } .price-amount { font-size: 56px; } .footer-logo { max-width: 240px; } }
+        @media (max-width: 768px) { body { padding-top: 70px; } nav#main-header { padding: 16px 24px; } nav#main-header.scrolled { padding: 12px 24px; } .logo-icon { height: 40px; } .nav-links.desktop-nav { display: none; } .mobile-menu-toggle { display: flex; } .hero { padding: 120px 20px 100px; min-height: auto; } .hero-meta { flex-direction: column; gap: 16px; } .btn-secondary { margin-left: 0; margin-top: 16px; } .hero-buttons { display: flex; flex-direction: column; gap: 16px; } section { padding: 80px 20px; } .resources-grid { grid-template-columns: 1fr; } .price-amount { font-size: 56px; } .footer-logo { max-width: 240px; } .trust-signals { padding: 60px 20px; } .trust-checks { flex-direction: column; gap: 16px; } }
     </style>
 </head>
 <body>
@@ -176,6 +187,20 @@
             <p class="hero-subtext">Your expertise is real. Your insights are valuable. But they're locked inside individual moments instead of captured in systems you can deploy again and again.</p>
             <p class="hero-subtext"><strong>One-on-One Training:</strong> Build your first systematic framework from a real problem you're facing right now. Walk away with a working system, not theory.</p>
             <div class="hero-buttons"><a href="#pricing" class="btn-primary">Build Your Framework - $1,500</a><a href="#curriculum" class="btn-secondary">See How It Works</a></div>
+        </div>
+    </section>
+    
+    <section class="trust-signals">
+        <div class="trust-signals-content">
+            <p class="section-label">Real-World Validation</p>
+            <p class="trust-quote">"I use it EVERY. SINGLE. DAY. Now it's just part of my process. Client conversations are way easier now."</p>
+            <p class="trust-author">— Sebastian, Sales Professional (using framework daily for 16 weeks)</p>
+            <div class="trust-checks">
+                <div class="trust-check"><span class="checkmark">✓</span> 1-2 sessions to build your framework</div>
+                <div class="trust-check"><span class="checkmark">✓</span> Work on your actual business problem</div>
+                <div class="trust-check"><span class="checkmark">✓</span> Walk away with deployable system</div>
+            </div>
+            <p class="trust-guarantee">If you don't build a working framework, full refund.</p>
         </div>
     </section>
     
